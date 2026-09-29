@@ -3,6 +3,15 @@ body {
 	background-color: #4a6c80;
 	color: #c1e2f5;
  }
+ h1 {
+  color: #cee2ed;
+    text-shadow: 2px 2px #5b085e;
+    font-family: 'Helvetica Neue', sans-serif;
+  
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+  font-size: 2em;
+ }
  h2 {
  	color: #cee2ed;
  	  text-shadow: 2px 2px #5b085e;
@@ -53,4 +62,8 @@ ol {
 
 ol li::before {
   background-color: var(--li-bg);
+}
+
+hr {
+  color: ghostwhite;
 }
