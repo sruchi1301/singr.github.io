@@ -1,0 +1,15 @@
+body {
+	font-family: "watch-mn", sans-serif;
+font-weight: 400;
+font-style: normal;
+background-color: #D0FC0A;
+}
+@font-face {
+  font-family: 'Copta';
+  src: url('assets/CorptaDEMO.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+h1 {
+	font-family: "Copta";
+}
