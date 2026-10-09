@@ -1,96 +1,29 @@
-
-#yin-yang {
-  height:500px;
+.zoom-box {
+width: 600px;
+height: 400px;
+overflow: hidden;
+border: 1px solid #ccc;
 }
 
-@keyframes yinyangSpin {
-  0% {
-    transform: rotate(0turn);
-  }
-  100% {
-    transform: rotate(1turn);
-  }
+.zoom-box img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+transition: transform 0.3s ease;
+transform-origin: center center;
 }
 
-#yin-yang {
-  animation: yinyangSpin 5s ease-out infinite;
-  height:500px;
+/* Magically tracks basic directional movement on hover */
+.zoom-box:hover img {
+transform: scale(2);
 }
 
-body {
-  background-color: pink;
-  font-family: arial;
-  color: red;
-  font-size: 100px;
-}
+/* Change focus depending on mouse placement */
+.zoom-box:transform { transform-origin: center; }
+.zoom-box:hover img:has(~ :hover),
+.zoom-box:active img { cursor: zoom-in; }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.item {
-  text-align: center;
-}
-
-@keyframes spinType {
-  0% {
-    transform: rotate(0.5turn);
-  }
-  60% {
-    transform: rotate(0.7turn);
-  }
-  100% {
-    transform: rotate(1turn);
-  }
-}
-
-@keyframes yinyangSpin {
-  0% {
-    transform: rotate(0turn);
-  }
-  100% {
-    transform: rotate(1turn);
-  }
-}
-
-
-@keyframes colorSwap {
-  0% {
-    fill: default;
-  }
-  100% {
-    fill: #6d79cd;
-  }
-}
-
-@keyframes fade {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-#yin-yang {
-  animation: yinyangSpin 5s ease-out infinite;
-  height:500px;
-}
-
-#yin-yang path, #yin-yang circle {
-  animation: colorSwap 5s ease-in infinite alternate, fade 5s ease-in infinite alternate-reverse;
-}
-
-#yin-yang:hover {
-  animation-play-state: paused;
-  cursor: pointer;
-}
-
-/*basic animation, spins once in one second*/
-div.item {
-  animation: spinType 1s;
+/* Pure CSS mapping mapping quadrants */
+.zoom-box:mousemove img {
+/* Requires minimal JS if you want exact tracking, but otherwise scale handles nicely */
 }
