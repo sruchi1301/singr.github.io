@@ -1,4 +1,3 @@
-/* Container holds everything in place */
 .magnifier-container {
 position: relative;
 width: 600px;
@@ -13,7 +12,7 @@ height: 100%;
 object-fit: cover;
 }
 
-/* The Lens - Hidden by default, uses the same image but larger */
+
 .lens {
 position: absolute;
 width: 150px;
@@ -28,7 +27,7 @@ background-image: url('https://picsum.photos'); /* Double the resolution */
 background-size: 1200px 800px;
 }
 
-/* Invisible Grid Cells mapped over the container */
+/* grid cells */
 .grid-cell {
 position: absolute;
 width: 50%;
@@ -41,7 +40,7 @@ z-index: 2;
 .bottom-left  { top: 50%; left: 0; }
 .bottom-right { top: 50%; left: 50%; }
 
-/* Show lens and adjust positions based on which cell is hovered */
+/* lens shows when you hover */
 .grid-cell:hover ~ .lens {
 opacity: 1;
 }
