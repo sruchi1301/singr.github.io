@@ -1,29 +1,64 @@
-.zoom-box {
+/* Container holds everything in place */
+.magnifier-container {
+position: relative;
 width: 600px;
 height: 400px;
 overflow: hidden;
-border: 1px solid #ccc;
+cursor: zoom-in;
 }
 
-.zoom-box img {
+.base-image {
 width: 100%;
 height: 100%;
 object-fit: cover;
-transition: transform 0.3s ease;
-transform-origin: center center;
 }
 
-/* Magically tracks basic directional movement on hover */
-.zoom-box:hover img {
-transform: scale(2);
+/* The Lens - Hidden by default, uses the same image but larger */
+.lens {
+position: absolute;
+width: 150px;
+height: 150px;
+border-radius: 50%;
+border: 3px solid #fff;
+box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+pointer-events: none; /* Allows mouse to hit the grid underneath */
+opacity: 0;
+transition: opacity 0.2s ease;
+background-image: url('https://picsum.photos'); /* Double the resolution */
+background-size: 1200px 800px;
 }
 
-/* Change focus depending on mouse placement */
-.zoom-box:transform { transform-origin: center; }
-.zoom-box:hover img:has(~ :hover),
-.zoom-box:active img { cursor: zoom-in; }
+/* Invisible Grid Cells mapped over the container */
+.grid-cell {
+position: absolute;
+width: 50%;
+height: 50%;
+z-index: 2;
+}
 
-/* Pure CSS mapping mapping quadrants */
-.zoom-box:mousemove img {
-/* Requires minimal JS if you want exact tracking, but otherwise scale handles nicely */
+.top-left     { top: 0; left: 0; }
+.top-right    { top: 0; left: 50%; }
+.bottom-left  { top: 50%; left: 0; }
+.bottom-right { top: 50%; left: 50%; }
+
+/* Show lens and adjust positions based on which cell is hovered */
+.grid-cell:hover ~ .lens {
+opacity: 1;
+}
+
+.top-left:hover ~ .lens {
+top: 10px; left: 10px;
+background-position: 0% 0%;
+}
+.top-right:hover ~ .lens {
+top: 10px; left: 430px;
+background-position: 100% 0%;
+}
+.bottom-left:hover ~ .lens {
+top: 240px; left: 10px;
+background-position: 0% 100%;
+}
+.bottom-right:hover ~ .lens {
+top: 240px; left: 430px;
+background-position: 100% 100%;
 }

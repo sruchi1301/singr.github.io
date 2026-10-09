@@ -2,12 +2,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Animation Activity</title>
+  <title>visual only</title>
   <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
- <div class="zoom-box">
-<img src="assets/painting.jpg" alt="Zoomable Image">
+ <div class="magnifier-container">
+<!-- The main image -->
+<img src="https://picsum.photos" alt="Product" class="base-image">
+
+<!-- Invisible grid tracking layers (add more for smoother movement) -->
+<div class="grid-cell top-left"></div>
+<div class="grid-cell top-right"></div>
+<div class="grid-cell bottom-left"></div>
+<div class="grid-cell bottom-right"></div>
+
+<!-- The Lens -->
+<div class="lens"></div>
 </div>
 </body>
 </html>
