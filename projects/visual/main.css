@@ -27,37 +27,43 @@ background-image: url('assets/painting.jpg');
 background-size: 2000px 1600px;
 }
 
-/* grid cells */
-.grid-cell {
-position: absolute;
-width: 50%;
-height: 50%;
-z-index: 2;
-}
+.grid-cell { 
+  position: absolute; 
+  width: 33.333%; 
+  height: 33.333%; 
+  z-index: 2; 
+}  
 
-.top-left     { top: 0; left: 0; }
-.top-right    { top: 0; left: 50%; }
-.bottom-left  { top: 50%; left: 0; }
-.bottom-right { top: 50%; left: 50%; }
+/* Row 1 */
+.r1-c1 { top: 0; left: 0; }
+.r1-c2 { top: 0; left: 33.333%; }
+.r1-c3 { top: 0; left: 66.666%; }
+
+/* Row 2 */
+.r2-c1 { top: 33.333%; left: 0; }
+.r2-c2 { top: 33.333%; left: 33.333%; }
+.r2-c3 { top: 33.333%; left: 66.666%; }
+
+/* Row 3 */
+.r3-c1 { top: 66.666%; left: 0; }
+.r3-c2 { top: 66.666%; left: 33.333%; }
+.r3-c3 { top: 66.666%; left: 66.666%; }
 
 /* lens shows when you hover */
-.grid-cell:hover ~ .lens {
-opacity: 1;
-}
+.grid-cell:hover ~ .lens { opacity: 1; }  
 
-.top-left:hover ~ .lens {
-top: 10px; left: 10px;
-background-position: 0% 0%;
-}
-.top-right:hover ~ .lens {
-top: 10px; left: 430px;
-background-position: 100% 0%;
-}
-.bottom-left:hover ~ .lens {
-top: 240px; left: 10px;
-background-position: 0% 100%;
-}
-.bottom-right:hover ~ .lens {
-top: 240px; left: 430px;
-background-position: 100% 100%;
-}
+/* NEW HOVER RULES FOR 3x3 TRACKING */
+/* Row 1 */
+.r1-c1:hover ~ .lens { top: 40px; left: 90px; background-position: 0% 0%; }
+.r1-c2:hover ~ .lens { top: 40px; left: 425px; background-position: 50% 0%; }
+.r1-c3:hover ~ .lens { top: 40px; left: 760px; background-position: 100% 0%; }
+
+/* Row 2 */
+.r2-c1:hover ~ .lens { top: 325px; left: 90px; background-position: 0% 50%; }
+.r2-c2:hover ~ .lens { top: 325px; left: 425px; background-position: 50% 50%; }
+.r2-c3:hover ~ .lens { top: 325px; left: 760px; background-position: 100% 50%; }
+
+/* Row 3 */
+.r3-c1:hover ~ .lens { top: 610px; left: 90px; background-position: 0% 100%; }
+.r3-c2:hover ~ .lens { top: 610px; left: 425px; background-position: 50% 100%; }
+.r3-c3:hover ~ .lens { top: 610px; left: 760px; background-position: 100% 100%; }
