@@ -1,0 +1,32 @@
+
+section {
+  margin-top: 120px;
+  scroll-margin-top: 40px;
+}
+
+#table-of-contents {
+  margin: 80px 0;
+}
+
+.grid-col-2 {
+  display: grid;
+
+  /* Creates two equal columns */
+  grid-template-columns: 1fr 1fr;
+
+  /* Adds space between the columns */
+  gap: 40px;
+}
+
+/* Prevents long code from breaking the layout */
+pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* Stacks the analysis sections on smaller screens */
+@media (max-width: 700px) {
+  .grid-col-2 {
+    grid-template-columns: 1fr;
+  }
+}
