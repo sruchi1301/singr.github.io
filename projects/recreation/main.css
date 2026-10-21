@@ -1,0 +1,136 @@
+/* --- Base Reset & Core Wireframe Properties --- */
+
+- {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: monospace, sans-serif;
+background-color: #ffffff;
+color: #000000;
+padding: 20px; /* Outer structural boundary layout padding */
+display: flex;
+flex-direction: column;
+gap: 40px; /** Natural layout grouping separation */
+}
+
+/* --- Header Layout (Flexbox) --- */
+.site-header {
+display: flex;
+flex-direction: column;
+gap: 15px;
+border-bottom: 1px solid #000000;
+padding-bottom: 15px;
+}
+
+.header-top {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.category-nav ul {
+display: flex;
+flex-wrap: wrap;
+list-style: none;
+gap: 15px;
+}
+
+/* --- Info/Weather Bar Layout (Flexbox) --- */
+.info-bar {
+display: flex;
+flex-direction: column;
+gap: 5px;
+border-bottom: 1px solid #000000;
+padding-bottom: 15px;
+}
+
+/* --- Content Stream Container (Flexbox) --- */
+.content-stream {
+display: flex;
+flex-direction: column;
+gap: 60px; /* Sets even spacing between different category sections */
+}
+
+/* --- Catalog Section Structural Grid Mix --- */
+.catalog-section {
+display: grid;
+grid-template-columns: 1fr; /* Default mobile view stacked flow */
+gap: 20px;
+}
+
+/* --- 2-Column Sequential Data Grid --- */
+.list-grid-2col {
+display: grid;
+grid-template-columns: 1fr;
+gap: 10px;
+}
+
+.list-item {
+display: flex;
+justify-content: space-between; /* Pushes Title to left and Year to right */
+border-bottom: 1px dashed #cccccc;
+padding-bottom: 5px;
+}
+
+/* --- Responsive Multi-Column Product Grid Layout --- */
+.product-grid {
+display: grid;
+/* Automatically creates columns that fit down to a minimum of 200px width */
+grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+gap: 20px;
+}
+
+.product-card {
+border: 1px solid #000000;
+min-height: 150px;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 15px;
+}
+
+/* --- Footer Layout (Flexbox) --- */
+.site-footer {
+border-top: 1px solid #000000;
+padding-top: 20px;
+display: flex;
+flex-direction: column;
+gap: 20px;
+}
+
+.footer-links {
+display: flex;
+flex-wrap: wrap;
+gap: 15px;
+}
+
+.footer-legal {
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+/* --- Layout Adjustments for Desktop Viewports --- */
+@media (min-width: 768px) {
+.info-bar {
+flex-direction: row;
+justify-content: space-between;
+}
+
+```
+/* Converts section layout into a side-by-side header + grid stream view */
+.catalog-section {
+    grid-template-columns: 1fr 3fr; /* 25% side text layout, 75% interactive space layout */
+    gap: 40px;
+}
+
+.list-grid-2col {
+    grid-template-columns: repeat(2, 1fr); /* Splits row listings across 2 visual areas */
+    gap: 20px;
+}
+```
+
+}
