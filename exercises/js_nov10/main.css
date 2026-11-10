@@ -1,0 +1,23 @@
+
+body {
+  margin: 0;
+  background-color: black;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mover {
+  width: 10%;
+  height: 150px;
+}
+
+.message {
+  margin: 0;
+  font-size: 24px;
+}
