@@ -14,10 +14,11 @@ body {
 
 .mover {
   width: 10%;
-  height: 150px;
+  height: 600px;
 }
 
 .message {
   margin: 0;
   font-size: 24px;
+  font-family: sans-serif;
 }

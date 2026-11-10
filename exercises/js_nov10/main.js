@@ -22,19 +22,19 @@ function updateClock() {
 
   // Minutes 0 through 19
   if (minutes < 20) {
-    mover.style.backgroundColor = "magenta";
+    mover.style.backgroundColor = "purple";
     message.textContent = "Beginning of the hour";
   }
 
   // Minutes 20 through 39
-  else if (minutes < 40) {
-    mover.style.backgroundColor = "seagreen";
+  else if (minutes < 30) {
+    mover.style.backgroundColor = "magenta";
     message.textContent = "Middle of the hour";
   }
 
   // Minutes 40 through 59
   else {
-    mover.style.backgroundColor = "purple";
+    mover.style.backgroundColor = "seagreen";
     message.textContent = "End of the hour";
   }
 }
