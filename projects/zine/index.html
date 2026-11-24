@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Asimovian&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+  <title>overcast</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: sans-serif;
+      color: #d8dfe8;
+      background: linear-gradient(180deg, #323842 0%, #22262e 55%, #16191f 100%);
+      display: flex;
+      justify-content: center;
+      padding: 5rem 1.5rem;
+      overflow-x: hidden;
+    }
+
+    .fog {
+      position: fixed;
+      inset: -20%;
+      background: radial-gradient(circle at 40% 35%, rgba(175, 185, 205, 0.16), transparent 60%),
+                  radial-gradient(circle at 70% 65%, rgba(185, 165, 185, 0.12), transparent 60%);
+      filter: blur(50px);
+      pointer-events: none;
+      animation: drift 20s ease-in-out infinite alternate;
+    }
+
+    @keyframes drift {
+      from { transform: translate(-3%, -2%); }
+      to   { transform: translate(4%, 3%); }
+    }
+
+    main {
+      position: relative;
+      width: 100%;
+      max-width: 560px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .name-circle {
+      width: 130px;
+      height: 130px;
+      margin: 0 auto 1.75rem auto; 
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, rgba(216, 223, 232, 0.12), rgba(22, 25, 31, 0.4));
+      border: 1px solid rgba(216, 223, 232, 0.18);
+      color: #d8dfe8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+      padding: 15px;
+      box-shadow: 0 0 25px rgba(175, 185, 205, 0.12);
+      transition: transform 0.6s ease, box-shadow 0.6s ease;
+      font-family: "Asimovian", sans-serif;
+    }
+
+
+
+    header p {
+      font-family: sans-serif;
+      color: #8b95a5;
+      margin-bottom: 0.6rem;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: normal;
+      text-shadow: 0 0 20px rgba(200, 210, 225, 0.3);
+    }
+
+    .song {
+      padding: 1.5rem 2rem;
+      margin-bottom: 1.5rem;
+      background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.04) 0%, transparent 75%);
+      transition: 0.8s ease;
+      cursor: pointer;
+    }
+
+    .song-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.4rem;
+    }
+
+    .song h2 {
+      font-size: 1.25rem;
+      font-weight: normal;
+      transition: 0.8s ease;
+    }
+
+    .song span {
+      font-family: sans-serif;
+      font-size: 0.8rem;
+      color: #7d8796;
+    }
+
+    .song p {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: #9aa4b4;
+    }
+
+    #status {
+      text-align: center;
+      margin-top: 2.5rem;
+      font-size: 0.9rem;
+      font-style: italic;
+      color: #8b95a5;
+    }
+  </style>
+</head>
+<body>
+  <div class="fog"></div>
+
+  <main>
+    <header>
+      <a href="about.html" class="name-circle">
+        ruchi!
+      </a>
+      <p>overcast</p>
+      <h1>keep your headlights on, it's getting foggy</h1>
+    </header>
+
+    <div class="song">
+      <div class="song-top">
+        <h2>01. sea, swallow me</h2>
+        <span>4:18</span>
+      </div>
+      <p>cocteau twins · 1986</p>
+    </div>
+
+    <div class="song">
+      <div class="song-top">
+        <h2>02. putting the dog to sleep</h2>
+        <span>5:47</span>
+      </div>
+      <p>the antlers · 2011</p>
+    </div>
+
+    <div class="song">
+      <div class="song-top">
+        <h2>03. i wanted you to feel the same</h2>
+        <span>2:31</span>
+      </div>
+      <p>the radio dept. · 2006</p>
+    </div>
+
+    <div class="song">
+      <div class="song-top">
+        <h2>04. subterranean homesick alien</h2>
+        <span>4:28</span>
+      </div>
+      <p>radiohead · 1997</p>
+    </div>
+
+    <div class="song">
+      <div class="song-top">
+        <h2>05. out getting ribs</h2>
+        <span>4:16</span>
+      </div>
+      <p>king krule · 2018</p>
+    </div>
+
+    <p id="status">in the winter, i often find myself leaning towards this style of music. it's been a constant for many years, and i hold a lot of these albums and artists in high regard. i love complex melodies and adding lots of sfx in production. i wanted to try to express the feeling these bring, where it's not necessarily sad but moreso just like a blanket of fog, so i wanted to try to encompass that in my webpage. the songs are complex in a subtle way, not filled with complicated progressions in an outright manner, so i kept the page simpler to try to reflect that as well.</p>
+  </main>
+
+  <script>
+    const songs = document.querySelectorAll(".song");
+    const statusText = document.getElementById("status");
+
+    songs.forEach((song) => {
+      song.addEventListener("click", () => {
+        songs.forEach((s) => s.classList.remove("active"));
+
+        song.classList.add("active");
+        const title = song.querySelector("h2").textContent;
+        statusText.textContent = "now playing: " + title.toLowerCase();
+      });
+    });
+  </script>
+</body>
+</html>
